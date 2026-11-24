@@ -42,3 +42,18 @@ Set-Location ..\Meshtastic
 
    Das Log sollte `Running in simulated mode.` und die Firmware-Version `2.7.26.54e0d8d` enthalten.
 5. **Simulator beenden.** Gib im ersten Terminal am Prompt `(Cmd)` den Befehl `exit` ein. Der Simulator meldet `Closing all nodes...` und PowerShell übernimmt wieder. Der Testcontainer wird automatisch entfernt.
+
+
+## Verifizierter Starttest
+
+Am 24. November 2026 wurde die Anleitung unter Windows mit einem frischen
+Projekt-Checkout auf `aa0bb6e`, einem separaten Meshtasticator-Checkout und
+einer neu eingerichteten Python-3.12-Umgebung getestet. Docker Desktop und
+das Firmware-Image waren auf dem Rechner bereits vorhanden.
+
+- `nodes 0` zeigte **Node 0** (`!00000010`) mit **PORTDUINO** an.
+- Docker meldete den in `start.py` festgelegten Image-Digest.
+- Das Firmware-Log enthielt `Running in simulated mode.` und die Version
+  `2.7.26.54e0d8d`.
+- `exit` beendete den Simulator mit Exit-Code 0. Der Testcontainer wurde
+  automatisch entfernt.
