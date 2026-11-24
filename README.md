@@ -38,27 +38,7 @@ code .\Meshtastic
 
 ## Simulator einrichten und testen
 
-Öffne in VS Code ein PowerShell-Terminal im Projektordner. Klone den offiziellen Meshtasticator einmal als Nachbarordner. Die Anleitung verwendet den getesteten Stand des [Meshtasticator](https://github.com/meshtastic/Meshtasticator/blob/17ceb8231079d87b070abc6132181e4c6b20202d/INTERACTIVE_SIM.md).
-
-```powershell
-Set-Location ..
-git clone https://github.com/meshtastic/Meshtasticator.git
-Set-Location .\Meshtasticator
-git switch --detach 17ceb8231079d87b070abc6132181e4c6b20202d
-
-py -3.12 -m venv .venv
-.\.venv\Scripts\python.exe -m pip install -r requirements.txt docker
-```
-
-Falls der Nachbarordner und die Python-Umgebung schon eingerichtet sind, kannst du diesen Schritt überspringen. Starte den Simulator bei laufendem Docker Desktop aus dem Projektordner `Meshtastic` mit einem virtuellen Knoten.
-
-```powershell
-..\Meshtasticator\.venv\Scripts\python.exe -X utf8 .\simulator\start.py 1
-```
-
-Der [Starter](simulator/start.py) prüft den Meshtasticator-Commit und startet die Firmware über den fest hinterlegten Docker-Digest. `-X utf8` sorgt dafür, dass die Knotentabelle auch unter Windows korrekt ausgegeben wird. Gib am Simulator-Prompt `nodes 0` ein. Wenn die Tabelle **Node 0** anzeigt, war der Starttest erfolgreich. Mit `exit` beendest du den Simulator.
-
-Das festgelegte Docker-Image enthält die getestete Firmware `2.7.26.54e0d8d`.
+Die [Simulator-Anleitung](simulator/README.md) zeigt, wie du den getesteten Meshtasticator-Stand einrichtest, einen virtuellen Knoten startest und die Firmware im Docker-Log überprüfst.
 
 ## Gemeinsam arbeiten
 
