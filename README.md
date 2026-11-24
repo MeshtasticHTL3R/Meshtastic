@@ -48,18 +48,17 @@ git switch --detach 17ceb8231079d87b070abc6132181e4c6b20202d
 
 py -3.12 -m venv .venv
 .\.venv\Scripts\python.exe -m pip install -r requirements.txt docker
-docker pull meshtastic/meshtasticd:latest
 ```
 
-Falls der Nachbarordner schon eingerichtet ist, wechsle direkt dorthin. Starte den Simulator bei laufendem Docker Desktop mit einem virtuellen Knoten.
+Falls der Nachbarordner und die Python-Umgebung schon eingerichtet sind, kannst du diesen Schritt überspringen. Starte den Simulator bei laufendem Docker Desktop aus dem Projektordner `Meshtastic` mit einem virtuellen Knoten.
 
 ```powershell
-.\.venv\Scripts\python.exe -X utf8 interactiveSim.py 1 -d
+..\Meshtasticator\.venv\Scripts\python.exe -X utf8 .\simulator\start.py 1
 ```
 
-`-d` startet die Meshtastic-Firmware in Docker. `-X utf8` sorgt dafür, dass die Knotentabelle auch unter Windows korrekt ausgegeben wird. Gib am Simulator-Prompt `nodes 0` ein. Wenn die Tabelle **Node 0** anzeigt, war der Starttest erfolgreich. Mit `exit` beendest du den Simulator.
+Der [Starter](simulator/start.py) prüft den Meshtasticator-Commit und startet die Firmware über den fest hinterlegten Docker-Digest. `-X utf8` sorgt dafür, dass die Knotentabelle auch unter Windows korrekt ausgegeben wird. Gib am Simulator-Prompt `nodes 0` ein. Wenn die Tabelle **Node 0** anzeigt, war der Starttest erfolgreich. Mit `exit` beendest du den Simulator.
 
-Der Test lief mit Firmware `2.7.26.54e0d8d`. Das Image-Tag `latest` kann sich ändern. Der Digest des getesteten Images ist `sha256:23e92b1331a3a471eaef0c63cbca4365ca40b3111a9781cfdbe5a5114e5773d4`.
+Das festgelegte Docker-Image enthält die getestete Firmware `2.7.26.54e0d8d`.
 
 ## Gemeinsam arbeiten
 
