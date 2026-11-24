@@ -57,3 +57,5 @@ das Firmware-Image waren auf dem Rechner bereits vorhanden.
   `2.7.26.54e0d8d`.
 - `exit` beendete den Simulator mit Exit-Code 0. Der Testcontainer wurde
   automatisch entfernt.
+
+Messwerte für die Raum-Nodes erzeugt der [Messwertgenerator (H‑05)](generator/README.md).
