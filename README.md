@@ -10,6 +10,8 @@ Dieses Projekt simuliert ein Meshtastic-Netz für Raumluft- und Fenstermesswerte
 
 Backend und Dashboard enthalten derzeit je eine README. Der Simulator lässt sich mit der folgenden Anleitung lokal starten.
 
+[Architektur und Schnittstellen (H-01)](docs/architektur.md) · [Projektprotokoll](docs/projektprotokoll.md)
+
 ## Arbeitsplatz unter Windows einrichten
 
 1. Installiere [Git für Windows](https://git-scm.com/install/windows) und [VS Code](https://code.visualstudio.com/download). Dein GitHub-Konto braucht Zugriff auf das private Projekt-Repo.
